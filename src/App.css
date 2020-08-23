@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
-}
+@media screen and (max-width: 800px) {
+  nav {
+    padding: 0 !important;
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  .wrapper {
+    text-align: center;
+    width: 100%;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  button {
+    padding: 10px 0.5rem !important;
+  }
+
+  .range-slider__tooltip__label {
+    visibility: hidden;
+  }
+
+  .credits {
+    padding-top: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+canvas {
+  cursor: none;
+}
+
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  position: fixed;
+  padding: 2rem;
+  bottom: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+label {
+  color: hsl(236, 32%, 26%);
+  font-weight: bold;
+  padding-right: 0.6rem;
+}
+
+.range-slider__tooltip__label {
+  float: right;
+}
+
+[type=range] {
+  cursor: pointer;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+  background: transparent;
+  padding: 10px 15px;
   color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(236, 32%, 26%);
+  overflow: hidden;
+  background-position: center;
+  transition: background 1s, transform 0.5s, box-shadow 2s;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  transition: 0.3s ease all;
+  cursor: pointer;
+  background: #545783 radial-gradient(circle, transparent 1%, #545783 1%) center/15000%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover,
+[data-active=true] {
+  transform: scale(1.2);
+  box-shadow: #000000b8 0 5px 5px -2px;
+}
+
+button:active {
+  transform: scale(1.1);
+  background-color: #9295b9;
+  background-size: 100%;
+  transition: transform 0.2s;
+}
+
+.arrow {
+  transition: border-top-color 1s;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top-width: 15px;
+  border-top-style: solid;
+}
+
+
+.tooltip-wrapper {
+  transition: display 0.5s ease;
+}
+
+[data-toggle=hide] {
+  visibility: hidden;
+}
+
+[data-toggle=show] {
+  visibility: visible;
 }
