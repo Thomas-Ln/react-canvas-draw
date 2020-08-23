@@ -60,7 +60,8 @@ const ColorPicker = () => {
         <div
           className="picker-wrapper">
           <CompactPicker
-            onChange={handleColorChange}/>
+            onChange={handleColorChange}
+            color={color}/>
         </div>
         <div
           className='arrow'
